@@ -2,7 +2,7 @@ import { ConnectEmbed, SmartWallet, useAddress, useSDK, useShowConnectEmbed, use
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { getUser } from "./api/auth/[...thirdweb]";
+
 import { WORKER_CONTRACT_ADDRESS } from "../constants/contracts";
 
 // Set loginOptional to false to require the user to login
@@ -116,20 +116,3 @@ const Login = () => {
 export default Login;
 
 // This is a server-side function that checks if the user is logged in and redirects to the home page if not.
-export async function getServerSideProps(context: any) {
-    const user = await getUser(context.req);
-
-    console.log("Checking user" + user?.address);
-    if(user) {
-        return {
-        redirect: {
-            destination: "/",
-            permanent: false,
-        },
-        };
-    }
-
-    return {
-        props: {},
-    };
-}

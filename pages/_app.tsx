@@ -24,10 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         coinbaseWallet(),
         walletConnect(),
       ]}
-      authConfig={{
-        domain: process.env.DOMAIN || "",
-        authUrl: "/api/auth"
-      }}
+      
     >
       <Navbar />
       <Component {...pageProps} />

@@ -2,7 +2,7 @@ import { useContract, useNFTs, useUser } from "@thirdweb-dev/react";
 import { BUSINESSES_CONTRACT_ADDRESS } from "../constants/contracts";
 import styles from "../styles/Home.module.css";
 import NFTCard from "../components/NFTCard";
-import { getUser } from "./api/auth/[...thirdweb]";
+
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -43,19 +43,3 @@ export default function Shop() {
 };
 
 // This is a server-side function that checks if the user is logged in and redirects to the login page if not.
-export async function getServerSideProps(context: any) {
-    const user = await getUser(context.req);
-  
-    console.log("Checking user" + user?.address);
-    if(!user) {
-      return {
-        redirect: {
-          destination: "/login",
-          permanent: false,
-        },
-      };
-    }
-    return {
-      props: {},
-    };
-  }
