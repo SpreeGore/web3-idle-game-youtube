@@ -104,15 +104,7 @@ import {
   
             <hr className={`${styles.divider} ${styles.spacerTop}`} />
             <h1>Your Staked REAPER</h1>
-            <div className={styles.nftBoxGrid}>
-              {stakedTokens &&
-                stakedTokens[0]?.map((stakedToken: BigNumber) => (
-                  <NFTCard1
-                    tokenId={stakedToken.toNumber()}
-                    key={stakedToken.toString()}
-                  />
-                ))}
-            </div>
+            
   
             <hr className={`${styles.divider} ${styles.spacerTop}`} />
             <h2>Your Unstaked REAPER</h2>
