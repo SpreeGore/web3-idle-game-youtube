@@ -1,35 +1,37 @@
-import { NFT, useContract, useNFTs } from "@thirdweb-dev/react";
+import { Web3Button } from "@thirdweb-dev/react";
+import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import { BUSINESSES_CONTRACT_ADDRESS } from "../constants/contracts";
-import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
-import ClaimLand from "../components/ClaimLand";
-import { Button} from "@nextui-org/react";
+const Mint: NextPage = () => {
+  const router = useRouter();
 
-export default function Shop()  {
-    const { contract } = useContract(BUSINESSES_CONTRACT_ADDRESS);
-    const { data: nfts } = useNFTs(contract);
-    console.log(nfts);
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.h1}>Mint A Shadow Land</h1>
 
-    return (
-        <>
-            <>
-                <Link
-                    href="/"
-                >
-                    <Button>Back</Button>
-                </Link>
-            </>
-            <>Shop</>
-            <>Purchase tools with $CARROTS to increase your earnings.</>
-            {!nfts ? (
-                <>
-                    
-                </>
-            ) : (
-                <>
-                  
-                </>
-            )}
-        </>
-    )
+      <p className={styles.explain}>
+        COST: 10 Matic
+      </p>
+      <hr className={`${styles.smallDivider} ${styles.detailPageHr}`} />
+
+      <Web3Button
+        theme="dark"
+        contractAddress={BUSINESSES_CONTRACT_ADDRESS}
+        action={(contract) => contract.erc1155.claim(10,1)}
+        onSuccess={() => {
+          alert("NFT Claimed!");
+          router.push("/stake");
+        }}
+        onError={(error) => {
+          alert(error);
+        }}
+      >
+        MINT
+      </Web3Button>
+    </div>
+  );
 };
+
+export default Mint;
