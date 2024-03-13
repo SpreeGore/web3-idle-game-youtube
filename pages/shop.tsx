@@ -35,7 +35,7 @@ export default function Shop() {
                     />
                 ))
             ) : (
-                <p>No businesses for sale.</p>
+                <p>NO  businesses for sale.</p>
             )}
             </div>
         </div>
