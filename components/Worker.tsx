@@ -45,7 +45,7 @@ const Worker = () => {
                     ))
                 )
             ) : (
-                <p>Loading worker...</p>
+                <p>Loading Land...</p>
             )}
         </div>
     )
