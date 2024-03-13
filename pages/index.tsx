@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import Worker from "../components/Worker";
+import ManagerOnDuty from "../components/ManagerOnDuty";
 import Businesses from "../components/Businesses";
 
 const Home: NextPage = () => {
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         flexDirection: "row",
         width: "100%",
       }}>
-        <Worker />
+        <ManagerOnDuty />
         <Businesses />
       </div>
     </div>

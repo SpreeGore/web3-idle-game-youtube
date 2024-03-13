@@ -1,6 +1,6 @@
 import { useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
-import { STAKING_CONTRACT_ADDRESS } from "../constants/contracts";
+import { STAKING_CONTRACT_ADDRESS, STAKING_CONTRACT_ADDRESSERC721 } from "../constants/contracts";
 import { BigNumber } from "ethers";
 import BusinessCard from "../components/BusinessCard";
 
@@ -10,7 +10,7 @@ const Businesses = () => {
 
     // Get the staking contract instance
     // Get the staked tokens for the user
-    const { contract: stakingContact } = useContract(STAKING_CONTRACT_ADDRESS);
+    const { contract: stakingContact } = useContract(STAKING_CONTRACT_ADDRESSERC721);
     
     const { data: stakedTokens, isLoading: loadingBusinesses } = useContractRead(stakingContact, "getStakeInfo", [
         address,
@@ -40,5 +40,3 @@ const Businesses = () => {
         </div>
     )
 };
-
-export default Businesses;
