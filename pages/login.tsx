@@ -33,7 +33,7 @@ const Login = () => {
             if(wallet instanceof SmartWallet && address && sdk) {
                 // Set the loading status to true and status message
                 setLoadingWorkerStatus(true);
-                setLoadingStatus("Checking worker balance...");
+                setLoadingStatus("Checking Land balance...");
 
                 // Check if the user has a worker NFT
                 const workerContract = await sdk?.getContract(WORKER_CONTRACT_ADDRESS);
@@ -42,7 +42,7 @@ const Login = () => {
                 // If the user does not have a worker, claim a worker and tokens
                 if(workerBalance?.toNumber() === 0) {
                     // Set the status message
-                    setLoadingStatus("No worker found...");
+                    setLoadingStatus("No Land found...");
                     try {
                         // Set the status message and claim the worker and tokens with Engine
                         setLoadingStatus("Claiming worker and tokens...")
@@ -101,7 +101,7 @@ const Login = () => {
 
     return (
         <div className={styles.container}>
-            <h1>Web3 Idle Game Login</h1>
+            <h1>Travel...</h1>
             {showConnectEmbed && (
                 <ConnectEmbed
                     auth={{

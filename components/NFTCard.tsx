@@ -74,7 +74,7 @@ export default function NFTCard({ nft }: Props) {
                     claimCondition.map((condition, index) => (
                         <div key={index}>
                             <p>Cost: {toEther(condition.price)} {condition.currencyMetadata.symbol}</p>
-                            <p>Earns: {calculateEarnings(parseInt(toEther(condition.price)))} {condition.currencyMetadata.symbol}/hour</p>
+                            <p>Earns: {calculateEarnings(parseInt(toEther(condition.price)))} {condition.currencyMetadata.symbol}/Day</p>
                         </div>
                     ))
                 )}
@@ -84,7 +84,7 @@ export default function NFTCard({ nft }: Props) {
                 onClick={handleClaim}
                 disabled={claimState !== "init"}
             >{
-            claimState === "nftClaim" ? "Purchasing business..." : claimState === "staking" ? "Staking business...": "Buy Now"
+            claimState === "nftClaim" ? "Purchasing business..." : claimState === "staking" ? "Activating Business...": "Buy Now"
             }</button>
         </div>
     );

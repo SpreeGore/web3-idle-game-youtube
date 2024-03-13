@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className={styles.navbarContainer}>
             {address && (
                 <>
-                    <h1>Web3 Idle Game Test</h1>
+                    <h1>Welcome To Shadow Land</h1>
                     <div className={styles.navbarOptions}>
                         <Link href="/">
                             <p>Businesses</p>
