@@ -19,7 +19,7 @@ const Mint: NextPage = () => {
       <Web3Button
         theme="dark"
         contractAddress={BUSINESSES_CONTRACT_ADDRESS}
-        action={(contract) => contract.erc1155.claim(10,1)}
+        action={(contract) => contract.erc1155.claim(1,1)}
         onSuccess={() => {
           alert("NFT Claimed!");
           router.push("/stake");
