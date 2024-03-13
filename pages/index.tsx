@@ -7,6 +7,9 @@ import { useRouter } from "next/router";
 import Worker from "../components/Worker"
 import Businesses from "../components/Businesses";
 
+
+
+
 const Home: NextPage = () => {
   // Check if the user is logged in
   const { isLoggedIn, isLoading } = useUser();

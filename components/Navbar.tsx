@@ -29,6 +29,9 @@ const Navbar = () => {
                         <Link href="/shop">
                             <p>Shop</p>
                         </Link>
+                        <Link href="/MintLand.tsx">
+                            <p>Mint Land</p>
+                        </Link>
                     </div>
                     <div className={styles.navbarOptions}>
                         {tokenBalance && (

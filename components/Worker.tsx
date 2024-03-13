@@ -28,7 +28,7 @@ const Worker = () => {
                     ownedWorkers.map((worker) => (
                         <div className={styles.workerContainer} key={worker.metadata.id}>
                             <div>
-                                <h2>Worker Stats:</h2>
+                                <h2>Land Stats:</h2>
                                 <MediaRenderer 
                                     key={worker.metadata.id}
                                     src={worker.metadata.image}
