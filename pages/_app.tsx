@@ -1,8 +1,11 @@
 import type { AppProps } from "next/app";
-import { ThirdwebProvider, embeddedWallet, smartWallet } from "@thirdweb-dev/react";
+import { ThirdwebProvider, metamaskWallet,
+  coinbaseWallet,
+  walletConnect } from "@thirdweb-dev/react";
 import "../styles/globals.css";
 import { ACCOUNT_FACTORY_CONTRACT_ADDRESS } from "../constants/contracts";
 import Navbar from "../components/Navbar";
+
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -15,10 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
       activeChain={activeChain}
       supportedWallets={[
-        smartWallet(embeddedWallet(), {
-          factoryAddress: ACCOUNT_FACTORY_CONTRACT_ADDRESS,
-          gasless: true,
-        })
+        metamaskWallet({
+          recommended: true,
+        }),
+        coinbaseWallet(),
+        walletConnect(),
       ]}
       authConfig={{
         domain: process.env.DOMAIN || "",
