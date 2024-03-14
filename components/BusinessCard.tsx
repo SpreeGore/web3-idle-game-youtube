@@ -51,7 +51,7 @@ export default function BusinessCard({ tokenId }: Props) {
         const intervalId = setInterval(loadClaimableRewards, 1000);
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [address, stakingContact, tokenId]);
 
     // Truncate the revenue to 6 decimal places
     const truncateRevenue = (revenue: BigNumber) => {
